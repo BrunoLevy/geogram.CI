@@ -1,0 +1,709 @@
+<?xml version="1.0"?>
+
+<valgrindoutput>
+
+<protocolversion>6</protocolversion>
+<protocoltool>memcheck</protocoltool>
+
+<preamble>
+  <line>Memcheck, a memory error detector</line>
+  <line>Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.26.0-218cee2feb-20251024 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: /home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map /home/runner/work/geogram/geogram/tests/data/Chimeres/armabunny.obj</line>
+</preamble>
+
+<pid>12979</pid>
+<ppid>12978</ppid>
+<tool>memcheck</tool>
+
+<args>
+  <vargv>
+    <exe>/usr/bin/valgrind.bin</exe>
+    <arg>--verbose</arg>
+    <arg>--xml=yes</arg>
+    <arg>--leak-check=full</arg>
+    <arg>--show-reachable=yes</arg>
+    <arg>--error-limit=no</arg>
+    <arg>--xml-file=bake_map1.memcheck</arg>
+    <arg>--suppressions=/home/runner/work/geogram/geogram/tools/valgrind.supp</arg>
+  </vargv>
+  <argv>
+    <exe>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</exe>
+    <arg>/home/runner/work/geogram/geogram/tests/data/Chimeres/armabunny.obj</arg>
+  </argv>
+</args>
+
+<status>
+  <state>RUNNING</state>
+  <time>00:00:00:00.024 </time>
+</status>
+
+<error>
+  <unique>0x0</unique>
+  <tid>3</tid>
+  <kind>ReallocSizeZero</kind>
+  <what>realloc() with size 0</what>
+  <stack>
+    <frame>
+      <ip>0x485A20F</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>realloc</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>1804</line>
+    </frame>
+    <frame>
+      <ip>0x499253F</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::PackedArrays::resize_array(unsigned int, unsigned int, bool)</fn>
+    </frame>
+    <frame>
+      <ip>0x49926FA</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::PackedArrays::set_array(unsigned int, unsigned int, unsigned int const*, bool)</fn>
+    </frame>
+    <frame>
+      <ip>0x4B4E5E2</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Delaunay_NearestNeighbors::store_neighbors_CB(unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4993D4A</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>(anonymous namespace)::ParallelForThread::run()</fn>
+    </frame>
+    <frame>
+      <ip>0x499A31C</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>(anonymous namespace)::PThreadManager::run_thread(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x54B0E6A</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>start_thread</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>454</line>
+    </frame>
+    <frame>
+      <ip>0x5544363</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>clone</fn>
+      <dir>./misc/../sysdeps/unix/sysv/linux/x86_64</dir>
+      <file>clone.S</file>
+      <line>100</line>
+    </frame>
+  </stack>
+  <auxwhat>Address 0x57e06c0 is 0 bytes after a block of size 0 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x485A20F</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>realloc</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>1804</line>
+    </frame>
+    <frame>
+      <ip>0x499253F</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::PackedArrays::resize_array(unsigned int, unsigned int, bool)</fn>
+    </frame>
+    <frame>
+      <ip>0x4B3B514</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Delaunay::update_neighbors()</fn>
+    </frame>
+    <frame>
+      <ip>0x4B6CDCB</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::CentroidalVoronoiTesselation::Lloyd_iterations(unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E44DD0</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::mesh_segment(GEO::Mesh&amp;, GEO::MeshSegmenter, unsigned int, bool)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E23C72</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>(anonymous namespace)::AtlasMaker::make_atlas()</fn>
+    </frame>
+    <frame>
+      <ip>0x4E2694D</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::mesh_make_atlas(GEO::Mesh&amp;, double, GEO::ChartParameterizer, GEO::ChartPacker, bool)</fn>
+    </frame>
+    <frame>
+      <ip>0x4003F4D</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0xd</unique>
+  <tid>1</tid>
+  <kind>InvalidRead</kind>
+  <what>Invalid read of size 1</what>
+  <stack>
+    <frame>
+      <ip>0x4E0D6BE</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::StructuringElement::convolve(unsigned char*, unsigned char*) const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0D957</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(GEO::StructuringElement const&amp;, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0DCA4</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x400409B</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0x855f040 is 0 bytes after a block of size 3,145,728 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x48545E3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new[](unsigned long)</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>730</line>
+    </frame>
+    <frame>
+      <ip>0x4DD1278</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Image::initialize(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x40048C3</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>GEO::Image::Image(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4003FF2</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0xe</unique>
+  <tid>1</tid>
+  <kind>InvalidRead</kind>
+  <what>Invalid read of size 1</what>
+  <stack>
+    <frame>
+      <ip>0x4E0D6C8</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::StructuringElement::convolve(unsigned char*, unsigned char*) const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0D957</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(GEO::StructuringElement const&amp;, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0DCA4</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x400409B</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0x855f041 is 1 bytes after a block of size 3,145,728 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x48545E3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new[](unsigned long)</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>730</line>
+    </frame>
+    <frame>
+      <ip>0x4DD1278</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Image::initialize(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x40048C3</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>GEO::Image::Image(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4003FF2</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0xf</unique>
+  <tid>1</tid>
+  <kind>InvalidRead</kind>
+  <what>Invalid read of size 1</what>
+  <stack>
+    <frame>
+      <ip>0x4E0D4FA</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::StructuringElement::convolve(unsigned char*, unsigned char*) const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0D957</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(GEO::StructuringElement const&amp;, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0DCA4</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x400409B</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0x855f042 is 2 bytes after a block of size 3,145,728 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x48545E3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new[](unsigned long)</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>730</line>
+    </frame>
+    <frame>
+      <ip>0x4DD1278</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Image::initialize(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x40048C3</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>GEO::Image::Image(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4003FF2</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x10</unique>
+  <tid>1</tid>
+  <kind>InvalidRead</kind>
+  <what>Invalid read of size 1</what>
+  <stack>
+    <frame>
+      <ip>0x4E0D64D</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::StructuringElement::convolve(unsigned char*, unsigned char*) const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0D957</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(GEO::StructuringElement const&amp;, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0DCA4</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x400409B</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0x855f041 is 1 bytes after a block of size 3,145,728 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x48545E3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new[](unsigned long)</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>730</line>
+    </frame>
+    <frame>
+      <ip>0x4DD1278</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Image::initialize(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x40048C3</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>GEO::Image::Image(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4003FF2</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x11</unique>
+  <tid>1</tid>
+  <kind>InvalidRead</kind>
+  <what>Invalid read of size 1</what>
+  <stack>
+    <frame>
+      <ip>0x4E0D654</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::StructuringElement::convolve(unsigned char*, unsigned char*) const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0D957</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(GEO::StructuringElement const&amp;, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E0DCA4</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::MorphoMath::dilate(unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x400409B</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0x855f042 is 2 bytes after a block of size 3,145,728 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x48545E3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new[](unsigned long)</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>730</line>
+    </frame>
+    <frame>
+      <ip>0x4DD1278</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Image::initialize(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x40048C3</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>GEO::Image::Image(GEO::Image::ColorEncoding, GEO::Image::ComponentEncoding, unsigned int, unsigned int, unsigned int)</fn>
+    </frame>
+    <frame>
+      <ip>0x4003FF2</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<status>
+  <state>FINISHED</state>
+  <time>00:00:01:16.723 </time>
+</status>
+
+<heap_summary>
+  <memory_in_use_at_exit>
+    <bytes>2,276</bytes>
+    <blocks>9</blocks>
+  </memory_in_use_at_exit>
+  <total_heap_usage>
+    <allocs>1,967,713</allocs>
+    <frees>1,967,704</frees>
+    <bytes_allocated>1,408,648,368</bytes_allocated>
+  </total_heap_usage>
+</heap_summary>
+
+<all_heap_blocks_freed>false</all_heap_blocks_freed>
+
+<error>
+  <unique>0x1a</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>96 bytes in 1 blocks are still reachable in loss record 4 of 9</text>
+    <leakedbytes>96</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4859FD3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>1678</line>
+    </frame>
+    <frame>
+      <ip>0x5775CFC</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0x57744F5</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0x57745CB</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0</obj>
+    </frame>
+    <frame>
+      <ip>0x400EA2E</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>call_init.part.0</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-init.c</file>
+      <line>74</line>
+    </frame>
+    <frame>
+      <ip>0x400EB43</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>call_init</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-init.c</file>
+      <line>120</line>
+    </frame>
+    <frame>
+      <ip>0x400EB43</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_init</fn>
+      <dir>./elf/./elf</dir>
+      <file>dl-init.c</file>
+      <line>121</line>
+    </frame>
+    <frame>
+      <ip>0x402BD1F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+    </frame>
+    <frame>
+      <ip>0x1</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF73A</ip>
+    </frame>
+    <frame>
+      <ip>0x1FFEFFF78B</ip>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x1b</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>112 bytes in 1 blocks are definitely lost in loss record 5 of 9</text>
+    <leakedbytes>112</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4853003</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new(unsigned long)</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>488</line>
+    </frame>
+    <frame>
+      <ip>0x498DAC0</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Logger::Logger()</fn>
+    </frame>
+    <frame>
+      <ip>0x498DBFE</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::Logger::initialize()</fn>
+    </frame>
+    <frame>
+      <ip>0x4960DFE</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::(anonymous namespace)::GeogramLibSingleton::GeogramLibSingleton(int) [clone .constprop.0]</fn>
+    </frame>
+    <frame>
+      <ip>0x496261E</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::initialize(int)</fn>
+    </frame>
+    <frame>
+      <ip>0x40039EC</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x1e</unique>
+  <tid>1</tid>
+  <kind>Leak_PossiblyLost</kind>
+  <xwhat>
+    <text>336 bytes in 1 blocks are possibly lost in loss record 8 of 9</text>
+    <leakedbytes>336</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4859FD3</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+      <dir>/usr/src/valgrind-1:3.26.0-0ubuntu1/coregrind/m_replacemalloc</dir>
+      <file>vg_replace_malloc.c</file>
+      <line>1678</line>
+    </frame>
+    <frame>
+      <ip>0x401F256</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>calloc</fn>
+      <dir>./elf/../include</dir>
+      <file>rtld-malloc.h</file>
+      <line>44</line>
+    </frame>
+    <frame>
+      <ip>0x401F256</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>allocate_dtv</fn>
+      <dir>./elf/../elf</dir>
+      <file>dl-tls.c</file>
+      <line>470</line>
+    </frame>
+    <frame>
+      <ip>0x401F256</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2</obj>
+      <fn>_dl_allocate_tls</fn>
+      <dir>./elf/../elf</dir>
+      <file>dl-tls.c</file>
+      <line>722</line>
+    </frame>
+    <frame>
+      <ip>0x54B1CD3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>allocate_stack</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>allocatestack.c</file>
+      <line>568</line>
+    </frame>
+    <frame>
+      <ip>0x54B1CD3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libc.so.6</obj>
+      <fn>pthread_create@@GLIBC_2.34</fn>
+      <dir>./nptl/./nptl</dir>
+      <file>pthread_create.c</file>
+      <line>680</line>
+    </frame>
+    <frame>
+      <ip>0x5226530</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35</obj>
+      <fn>std::thread::_M_start_thread(std::unique_ptr&lt;std::thread::_State, std::default_delete&lt;std::thread::_State&gt; &gt;, void (*)())</fn>
+    </frame>
+    <frame>
+      <ip>0x4ED746E</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>xatlas::Create()</fn>
+    </frame>
+    <frame>
+      <ip>0x4E2E6DC</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::pack_atlas_using_xatlas(GEO::Mesh&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E269DF</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/lib/libgeogram.so.1.10.2-rc</obj>
+      <fn>GEO::mesh_make_atlas(GEO::Mesh&amp;, double, GEO::ChartParameterizer, GEO::ChartPacker, bool)</fn>
+    </frame>
+    <frame>
+      <ip>0x4003F4D</ip>
+      <obj>/home/runner/work/geogram/geogram/build/Linux64-gcc-dynamic-Release/bin/bake_map</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<leak_summary>
+  <definitely_lost>
+    <bytes>112</bytes>
+    <blocks>1</blocks>
+  </definitely_lost>
+  <indirectly_lost>
+    <bytes>0</bytes>
+    <blocks>0</blocks>
+  </indirectly_lost>
+  <possibly_lost>
+    <bytes>336</bytes>
+    <blocks>1</blocks>
+  </possibly_lost>
+  <still_reachable>
+    <bytes>96</bytes>
+    <blocks>1</blocks>
+  </still_reachable>
+  <suppressed>
+    <bytes>1,732</bytes>
+    <blocks>6</blocks>
+  </suppressed>
+</leak_summary>
+
+<errorcounts>
+  <pair>
+    <count>2</count>
+    <unique>0x11</unique>
+  </pair>
+  <pair>
+    <count>2</count>
+    <unique>0x10</unique>
+  </pair>
+  <pair>
+    <count>2</count>
+    <unique>0xf</unique>
+  </pair>
+  <pair>
+    <count>2</count>
+    <unique>0xe</unique>
+  </pair>
+  <pair>
+    <count>2</count>
+    <unique>0xd</unique>
+  </pair>
+  <pair>
+    <count>13</count>
+    <unique>0x0</unique>
+  </pair>
+</errorcounts>
+
+<suppcounts>
+  <pair>
+    <count>5</count>
+    <name>dlopen1</name>
+  </pair>
+  <pair>
+    <count>1</count>
+    <name>Vorpaline_gomp_64bits_leak_2</name>
+  </pair>
+</suppcounts>
+
+<error_summary>
+  <errors>25</errors>
+  <error_contexts>8</error_contexts>
+  <suppressed>0</suppressed>
+  <suppressed_contexts>0</suppressed_contexts>
+</error_summary>
+
+</valgrindoutput>
