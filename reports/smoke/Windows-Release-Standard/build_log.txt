@@ -748,8 +748,8 @@ MSBuild version 18.10.1-1.26427.6+3cd27c13e for .NET Framework
   clapack_ilazlc.c
   clapack_ilazlr.c
   clapack_izmax1.c
-  clapack_sgeqr2.c
   clapack_scsum1.c
+  clapack_sgeqr2.c
   clapack_sisnan.c
   clapack_slabad.c
   clapack_slacn2.c
