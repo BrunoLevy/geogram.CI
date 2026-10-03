@@ -815,8 +815,8 @@ MSBuild version 18.10.1-1.26427.6+3cd27c13e for .NET Framework
   cdiagonal.c
   cgscon.c
   cgsequ.c
-  cgsisx.c
   cgsitrf.c
+  cgsisx.c
   cgsrfs.c
   cgssv.c
   cgssvx.c
