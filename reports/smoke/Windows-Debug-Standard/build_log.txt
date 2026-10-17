@@ -424,8 +424,8 @@ MSBuild version 18.10.1-1.26427.6+3cd27c13e for .NET Framework
   libf2c_ftell_.c
   libf2c_getarg_.c
   libf2c_getenv_.c
-  libf2c_h_abs.c
   libf2c_h_dim.c
+  libf2c_h_abs.c
   libf2c_h_dnnt.c
   libf2c_h_indx.c
   libf2c_h_len.c
@@ -603,8 +603,8 @@ MSBuild version 18.10.1-1.26427.6+3cd27c13e for .NET Framework
   izamax.c
   lsame.c
   sasum.c
-  saxpy.c
   scabs1.c
+  saxpy.c
   scasum.c
   scnrm2.c
   scopy.c
@@ -772,8 +772,8 @@ MSBuild version 18.10.1-1.26427.6+3cd27c13e for .NET Framework
   clapack_slarfg.c
   clapack_slarfp.c
   clapack_slarfx.c
-  clapack_slarnv.c
   clapack_slartg.c
+  clapack_slarnv.c
   clapack_slaruv.c
   clapack_slascl.c
   clapack_slaset.c
@@ -985,8 +985,8 @@ MSBuild version 18.10.1-1.26427.6+3cd27c13e for .NET Framework
   zsnode_dfs.c
   zsp_blas2.c
   zsp_blas3.c
-  zutil.c
   cgetv0.c
+  zutil.c
   cnaitr.c
   cnapps.c
   cnaup2.c
